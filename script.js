@@ -3,6 +3,13 @@ const lights = ['red', 'yellow', 'green'];
 let currentIndex = 0;
 const INTERVAL = 5 * 60 * 1000; // 5 minutes in milliseconds
 let timeRemaining = INTERVAL;
+/**
+ * ID of the active timer used to update the countdown display.
+ * Holds the value returned by setInterval so the timer can be cancelled with clearInterval.
+ * When no timer is active this is null.
+ *
+ * @type {number|NodeJS.Timeout|null}
+ */
 let countdownInterval;
 /**
  * ID of the active timer used to cycle the traffic light.
@@ -63,4 +70,3 @@ updateCountdown();
 // Set up intervals
 changeInterval = setInterval(updateLight, INTERVAL);
 countdownInterval = setInterval(updateCountdown, 1000);
-}
