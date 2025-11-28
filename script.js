@@ -44,11 +44,13 @@ function updateLight() {
 // Function to format time as MM:SS
 function formatTime(ms) {
     const totalSeconds = Math.floor(ms / 1000);
-    // Clamp display to zero if negative
-    countdownText.textContent = formatTime(Math.max(0, timeRemaining));
-    timeRemaining -= 1000;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
 function updateCountdown() {
-    countdownText.textContent = formatTime(timeRemaining);
+    countdownText.textContent = formatTime(Math.max(0, timeRemaining));
     if (timeRemaining > 0) {
         timeRemaining -= 1000;
     }
