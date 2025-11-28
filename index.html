@@ -10,10 +10,10 @@
     <div class="container">
         <h1>Traffic Light</h1>
         
-        <div class="traffic-light">
-            <div class="light red" id="red"></div>
-            <div class="light yellow" id="yellow"></div>
-            <div class="light green active" id="green"></div>
+        <div class="traffic-light" id="traffic-light" role="img" aria-label="Traffic light is green" aria-live="polite">
+            <div class="light red" id="red" role="presentation" aria-hidden="true"></div>
+            <div class="light yellow" id="yellow" role="presentation" aria-hidden="true"></div>
+            <div class="light green" id="green" role="presentation" aria-hidden="true"></div>
         </div>
         
         <p class="status">Current Light: <span id="current">Green</span></p>
